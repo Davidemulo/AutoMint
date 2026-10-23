@@ -1,8 +1,7 @@
 /**
  * Sentry browser-side SDK initialization.
  *
- * Loaded automatically by the Next.js Sentry instrumentation hook
- * (instrumentation.ts → onClientEntry).
+ * Injected into browser entry points by withSentryConfig in next.config.js.
  *
  * Privacy guarantees
  * ------------------
@@ -16,7 +15,7 @@
  */
 
 import * as Sentry from "@sentry/nextjs";
-import { scrubEvent } from "./sentryScrub";
+import { scrubEvent } from "./src/lib/sentryScrub";
 
 Sentry.init({
   // Only pass a dsn when one is configured — `dsn: undefined` is rejected

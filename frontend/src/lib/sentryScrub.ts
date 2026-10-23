@@ -27,7 +27,7 @@ function scrubBreadcrumb(breadcrumb: Breadcrumb): Breadcrumb {
   };
 }
 
-export function scrubEvent(event: Event): Event {
+export function scrubEvent<T extends Event>(event: T): T {
   const scrubbed = { ...event };
 
   if (scrubbed.message) scrubbed.message = scrubString(scrubbed.message);
